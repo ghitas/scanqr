@@ -1,0 +1,84 @@
+<!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+<!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+
+<div class="upage" id="FAI-4">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="upage-outer">
+            <div class="uib-header header-bg container-group inner-element uib_w_8" data-uib="layout/header" data-ver="0">
+                <!--Header-->
+                <div class="widget-container wrapping-col single-centered">
+                    <div class="tarea widget uib_w_10 d-margins" data-uib="media/text" data-ver="0" name="uib_w_10">
+                        <div class="widget-container left-receptacle"></div>
+                        <div class="widget-container right-receptacle"></div>
+                        <div class="text-container">
+                            <h4>Records</h4>
+                        </div>
+                    </div>
+                </div>
+                <!--End Header-->
+                <div class="widget-container content-area horiz-area wrapping-col left">
+                    <button (click)="handleBack()" class="btn widget uib_w_9 d-margins btnexit" data-uib="twitter%20bootstrap/button" data-ver="1">
+                        <i class="fa-2x fa fa-chevron-left button-icon-left" data-position="left"></i>
+                    </button>
+                </div>
+                <div class="widget-container content-area horiz-area wrapping-col right"></div>
+            </div>
+            <!--Tab control-->
+            <div class="upage-content ac0 content-area vertical-col left" id="page_37_44">
+                <ul class="nav widget uib_w_11 nav-tabs d-margins" role="tablist" data-uib="twitter%20bootstrap/tab_bar" data-ver="1">
+                    <li role="presentation" class="col-xs-4 widget uib_w_12 text-center" data-uib="twitter%20bootstrap/tab_item" data-ver="1"><a role="tab" data-toggle="tab" href="#FAI4home">To Do({{todoTab? todoTab.length: 0}})</a>
+                    </li>
+                    <li role="presentation" class="col-xs-4 widget uib_w_13 text-center" id="checkedTab" data-uib="twitter%20bootstrap/tab_item" data-ver="1"><a role="tab" data-toggle="tab" href="#FAI4menu1">Checked({{checked?checked.length:0}})</a>
+                    </li>
+                    <li role="presentation" class="col-xs-4 widget uib_w_14 text-center" data-uib="twitter%20bootstrap/tab_item" data-ver="1"><a role="tab" data-toggle="tab" href="#FAI4menu2">Extras({{extras?extras.length:0}})</a>
+                    </li>
+                </ul>
+            </div>
+            <!--End tab control-->
+        </div>
+    </nav>
+    <div class="tab-content">
+        <!--Tab 1 data-->
+        <div id="FAI4home" class="tab-pane fade in active fai4-tab">
+            <div class="widget-container content-area vertical-col">
+                <div class="list-group widget uib_w_49 d-margins">
+                    <a (click)="handleTodo(item)" class="list-group-item allow-badge widget uib_w_50" *ngFor="let item of todoTab">
+                        <!--<h5 class="list-group-item-heading">{{appservice.locale == "zh" ?item.ast_nm_zh_tw: item.ast_nm_en}}</h5>-->
+                        <h5 class="list-group-item-heading">{{item.comp_nm}} / {{item.ast_no}}</h5>
+                    </a>
+                </div>
+                <span class="uib_shim"></span>
+            </div>
+        </div>
+        <!--End tab 1 data-->
+        <!--Tab 2 data-->
+        <div id="FAI4menu1" class="tab-pane fade fai4-tab">
+            <div class="widget-container content-area vertical-col">
+                <div class="list-group widget uib_w_53 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1">
+                    <a (click)="handleChecked(check)" class="list-group-item allow-badge widget uib_w_54" data-uib="twitter%20bootstrap/list_item"
+                        data-ver="1" *ngFor="let check of checked">
+                        <!--<h5 class="list-group-item-heading">{{appservice.locale == "zh" ?check.ast_nm_zh_tw: check.ast_nm_en}}</h5>-->
+                        <h5 class="list-group-item-heading">{{check.comp_nm}} / {{check.ast_no}}</h5>
+                    </a>
+                </div>
+                <span class="uib_shim"></span>
+            </div>
+        </div>
+        <!--End tab 2 data-->
+        <!--Tab 3 data-->
+        <div id="FAI4menu2" class="tab-pane fade fai4-tab">
+            <div class="widget-container content-area vertical-col">
+                <div class="list-group widget uib_w_69 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1" *ngFor="let item of extras">
+                    <div class="input-group">
+                        <a class="form-control" (click)="handleExtras()" style="text-decoration:none;">{{item.ast_no}}</a>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" (click)="deleteExtras(item)"><i class="glyphicon glyphicon-trash" data-position="icon only"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <span class="uib_shim"></span>
+            </div>
+        </div>
+        <!--End tab 3 data-->
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div (click)="onContainerClicked($event)" class="modal fade" tabindex="-1" [ngClass]="{'in': visibleAnimate}" [ngStyle]="{'display': visible ? 'block' : 'none', 'opacity': visibleAnimate ? 1 : 0}">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button (click)="hide('')" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{dialog.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <p>{{dialog.content}}</p>
+            </div>
+            <div class="modal-footer">
+                <button (click)="hide('yes')" type="button" class="btn btn-danger" data-dismiss="modal" *ngIf="dialog.btnYN">{{keep?"Keep":"Yes"}}</button>
+                <button (click)="hide('no')" type="button" class="btn btn-primary" data-dismiss="modal" *ngIf="dialog.btnYN">{{keep?"No Keep":"No"}}</button>
+                <button (click)="hide('ok')" type="button" class="btn btn-primary" data-dismiss="modal" *ngIf="!dialog.btnYN">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>

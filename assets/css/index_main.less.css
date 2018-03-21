@@ -1,0 +1,4998 @@
+/*
+
+  Warning:  This CSS file has been auto-generated from a .less file.  If you edit it your edits will be lost the next time LessCSS is run.
+
+  It would be best to make a separate CSS file and place any overriding CSS in there.  If you must access the original CSS, do so by editing the .less files.
+
+*/
+/* global settings */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+/* grid */
+.grid {
+  width: 100%;
+}
+.upage-content > .grid {
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* gutter around whole design */
+/*
+.upage-content > .grid-pad {
+  padding: @gutter @gutter 0px @gutter;
+}
+*/
+/* column */
+.urow:not(.cright) > .col {
+  float: left;
+}
+.urow.cright > .col {
+  float: right;
+}
+.col {
+  position: relative;
+  min-height: 1px;
+}
+.content-area {
+  position: relative;
+}
+/* row */
+.urow {
+  clear: both;
+  position: relative;
+}
+form.urow {
+  margin-bottom: 0px;
+}
+.widget {
+  position: relative;
+}
+/* for widgets and the like
+   <div class="table-thing widget">
+    <div class="narrow-control w85"> my width is set </div>
+    <div class="wide-control"> my width is 100%, minus the set width of the narrow-control</div>
+   </div>
+
+   .w85 { width:85px; }
+*/
+.vertical-col > *,
+.vertical-col > .table-thing,
+.vertical-col > .afScrollPanel > .table-thing,
+.wrapping-col > .no_wrap.table-thing,
+.wrapping-col > .afScrollPanel > .no_wrap.table-thing {
+  width: 100%;
+}
+#afui .vertical-col > .afScrollPanel > .widget,
+#afui .vertical-col > .widget,
+.vertical-col > .widget,
+.camera > .widget {
+  width: calc(100% - 10px);
+  margin-left: 5px;
+}
+.col > .vertical-col > .widget {
+  width: 100%;
+  margin-left: 0;
+}
+.table-thing {
+  display: table;
+}
+.wide-control {
+  display: table-cell;
+  width: 100%;
+}
+.narrow-control {
+  display: table-cell;
+}
+/* wrapping column */
+.wrapping-col.right > *,
+.wrapping-col.right > .afScrollPanel > * {
+  float: right;
+}
+/* margin: 0 5px;   move margin to another class */
+.wrapping-col.left > *,
+.wrapping-col.left > .afScrollPanel > * {
+  float: left;
+}
+/* center and right alignment */
+.vertical-col.center {
+  text-align: center;
+}
+.vertical-col.right {
+  text-align: right;
+}
+.vertical-col.right > *,
+.col > .vertical-col.right > .widget,
+.vertical-col.right > .afScrollPanel > * {
+  margin-left: auto;
+}
+.vertical-col.center > *,
+.col > .vertical-col.center > .widget,
+.vertical-col.center > .afScrollPanel > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapping-col:not(.horiz-area) > .no_wrap,
+.wrapping-col:not(.horiz-area) > .afScrollPanel > .no_wrap {
+  float: none;
+  clear: both;
+  /* margin: 8px 0px; */
+}
+.center-h-v-col > .widget {
+  position: absolute !important;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  margin-top: 0 !important;
+}
+/* shim */
+.uib_shim {
+  clear: both;
+  float: none !important;
+  width: 100%;
+  position: relative;
+  height: 0px;
+  line-height: 0px;
+  font-size: 0px;
+  display: block;
+}
+/* content-box fix for box-sizing */
+.content-box,
+.content-box:before,
+.content-box:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* page */
+.hidden:not(.afPopup) {
+  display: none;
+}
+.upage-content,
+.upage-outer {
+  position: relative;
+}
+html,
+body {
+  height: 100%;
+}
+body:not(#afui) .upage,
+body:not(#afui) .upage-content {
+  height: 100%;
+}
+body:not(#afui) .upage-outer {
+  height: auto;
+}
+/* position relative works fine. but fixed can be elected as well */
+/* .upage-content, .upage-outer { position: fixed; height:100%; } */
+.upage {
+  overflow-x: hidden;
+}
+.upage-content {
+  z-index: 1;
+}
+#afui .upage {
+  padding: 0;
+}
+/* sidebars and crossbars */
+.uib_sidebar {
+  position: fixed;
+  height: 100%;
+  top: 0px;
+}
+.uib_crossbar {
+  position: fixed;
+  width: 100%;
+  left: 0px;
+}
+.leftbar,
+.rightbar {
+  z-index: 2;
+}
+.reveal.leftbar {
+  left: 0px;
+  z-index: 0;
+}
+.reveal.rightbar {
+  right: 0px;
+  z-index: 0;
+}
+.leftbar.oh,
+.rightbar.oh {
+  z-index: 3;
+}
+.reveal {
+  z-index: 0;
+  visibility: hidden;
+}
+.topbar {
+  z-index: 3;
+}
+.topbar.reveal {
+  top: 0px;
+  z-index: 0;
+}
+.botbar {
+  z-index: 3;
+  position: fixed;
+}
+.botbar.oh,
+.topbar.oh {
+  z-index: 4;
+}
+.sidebar-content {
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  margin: 0;
+}
+.sidebar-thumb {
+  position: relative;
+  margin: 0;
+  /* background-image:url('images/gripper.png'); */
+}
+.template {
+  display: none !important;
+}
+.uib-absolute {
+  position: absolute !important;
+}
+.content-block-inner {
+  box-sizing: content-box;
+}
+.navbar-inner .widget-container {
+  display: inline-flex;
+}
+.searchbar {
+  width: 100% !important;
+  margin: 0 !important;
+}
+#afui .panel {
+  padding: 0px;
+}
+#afui .pages {
+  height: 100%;
+}
+#afui .upage-outer {
+  height: 100%;
+}
+body#afui.v2 {
+  overflow-y: auto !important;
+}
+body#afui .panel > .widget > input[type="radio"] + label,
+body#afui .panel > .widget > input[type="checkbox"] + label {
+  padding-top: 14px;
+}
+#afui .table-thing input[type="radio"] + label,
+#afui .table-thing input[type="checkbox"] + label {
+  padding-top: 6px !important;
+}
+input.toggle + label:after {
+  width: 32px;
+}
+body#afui .splt {
+  width: 200px;
+}
+.uib-header-fixed {
+  position: fixed !important;
+  top: 0;
+}
+.uib-footer-fixed {
+  position: fixed !important;
+  bottom: 0;
+}
+.uib-header,
+.uib-footer {
+  width: 100%;
+  min-height: 48px;
+  z-index: 2;
+  position: relative;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+.uib-header .d-margins,
+.uib-footer .d-margins {
+  margin: 0;
+}
+.uib-header > .horiz-area,
+.uib-footer > .horiz-area {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-grow: 1;
+  -o-flex-grow: 1;
+  flex-grow: 1;
+  pointer-events: none;
+  z-index: 1;
+  display: -webkit-box;
+  -webkit-box-align: center;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+.uib-header > .horiz-area > *,
+.uib-footer > .horiz-area > * {
+  pointer-events: auto;
+  height: 100%;
+}
+.uib-header > .horiz-area.right,
+.uib-footer > .horiz-area.right {
+  -webkit-flex-direction: row-reverse;
+  -moz-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  -o-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-box-direction: reverse;
+  -webkit-box-pack: end;
+}
+.uib-header > h2,
+.uib-footer > h2 {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #DDD;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  margin-top: -0.5em;
+  text-align: center;
+}
+.uib-header > .single-centered,
+.uib-footer > .single-centered {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+.uib-header > .single-centered > *,
+.uib-footer > .single-centered > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+@media all {
+  .header-bg {
+    background-color: #666666;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+  }
+}
+.button-icon-top {
+  display: block;
+  margin: auto;
+}
+.button-icon-bottom {
+  display: block;
+  margin: auto;
+}
+.button-icon-left {
+  float: left;
+}
+.button-icon-right {
+  float: right;
+}
+@media all {
+  .wrapping-col > .d-margins,
+  .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 3px;
+    margin-right: 4px;
+  }
+  .wrapping-col > .d-margins,
+  .wrapping-col > .afScrollPanel > .d-margins {
+    margin-left: 3px;
+    margin-right: 4px;
+  }
+  .d-margins {
+    margin-top: 5px;
+    margin-bottom: 6px;
+  }
+}
+.upage-content ul li {
+  padding: 0px;
+}
+.uib-card {
+  position: relative;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.card-header,
+.card-left,
+.card-footer,
+.card-right {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+.card-header {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: auto;
+}
+.card-footer {
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: auto;
+}
+.card-left {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+.card-right {
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
+.uib-card section .widget-divider:only-of-type {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: auto !important;
+  width: auto !important;
+}
+.uib-card .widget-divider:only-of-type div {
+  height: 100%;
+}
+.card_grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+.card_grid > .widget {
+  flex-grow: 1;
+}
+@media all {
+  .flex-basis-7 > .widget {
+    flex-basis: calc(100% / 2);
+  }
+}
+@media all {
+  .section-dimension-8 .card-header {
+    height: 40px;
+  }
+  .section-dimension-8 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-8 .card-left {
+    width: 50px;
+  }
+  .section-dimension-8 .card-right {
+    width: 50px;
+  }
+  .section-dimension-8 {
+    min-height: 100px;
+  }
+  div.section-dimension-8.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-8.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-8.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-8.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-8.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-8.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-8.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-8.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-8.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-8.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-8.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-8.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-8.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-8.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-8.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-8.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-8.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-8.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-8.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-8.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-8.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-8.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-8.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-8.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-8.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-8.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-8.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-8.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-8.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-8.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-8.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-8.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-8.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-8.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-9 .card-header {
+    height: 40px;
+  }
+  .section-dimension-9 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-9 .card-left {
+    width: 50px;
+  }
+  .section-dimension-9 .card-right {
+    width: 50px;
+  }
+  .section-dimension-9 {
+    min-height: 100px;
+  }
+  div.section-dimension-9.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-9.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-9.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-9.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-9.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-9.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-9.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-9.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-9.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-9.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-9.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-9.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-9.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-9.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-9.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-9.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-9.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-9.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-9.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-9.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-9.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-9.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-9.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-9.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-9.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-9.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-9.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-9.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-9.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-9.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-9.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-9.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-9.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-9.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-10 .card-header {
+    height: 40px;
+  }
+  .section-dimension-10 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-10 .card-left {
+    width: 50px;
+  }
+  .section-dimension-10 .card-right {
+    width: 50px;
+  }
+  .section-dimension-10 {
+    min-height: 100px;
+  }
+  div.section-dimension-10.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-10.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-10.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-10.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-10.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-10.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-10.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-10.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-10.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-10.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-10.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-10.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-10.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-10.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-10.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-10.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-10.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-10.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-10.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-10.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-10.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-10.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-10.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-10.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-10.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-10.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-10.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-10.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-10.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-10.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-10.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-10.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-10.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-10.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-11 .card-header {
+    height: 40px;
+  }
+  .section-dimension-11 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-11 .card-left {
+    width: 50px;
+  }
+  .section-dimension-11 .card-right {
+    width: 50px;
+  }
+  .section-dimension-11 {
+    min-height: 100px;
+  }
+  div.section-dimension-11.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-11.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-11.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-11.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-11.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-11.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-11.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-11.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-11.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-11.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-11.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-11.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-11.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-11.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-11.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-11.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-11.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-11.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-11.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-11.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-11.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-11.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-11.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-11.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-11.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-11.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-11.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-11.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-11.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-11.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-11.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-11.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-11.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-11.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .flex-basis-1 > .widget {
+    flex-basis: calc(100% / 2);
+  }
+}
+@media all {
+  .section-dimension-2 .card-header {
+    height: 40px;
+  }
+  .section-dimension-2 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-2 .card-left {
+    width: 50px;
+  }
+  .section-dimension-2 .card-right {
+    width: 50px;
+  }
+  .section-dimension-2 {
+    min-height: 100px;
+  }
+  div.section-dimension-2.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-2.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-2.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-2.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-2.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-2.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-2.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-2.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-2.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-2.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-2.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-2.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-2.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-2.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-2.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-2.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-2.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-2.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-2.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-2.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-2.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-2.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-2.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-2.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-2.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-2.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-2.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-2.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-2.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-2.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-2.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-2.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-2.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-2.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-3 .card-header {
+    height: 40px;
+  }
+  .section-dimension-3 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-3 .card-left {
+    width: 50px;
+  }
+  .section-dimension-3 .card-right {
+    width: 50px;
+  }
+  .section-dimension-3 {
+    min-height: 100px;
+  }
+  div.section-dimension-3.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-3.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-3.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-3.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-3.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-3.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-3.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-3.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-3.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-3.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-3.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-3.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-3.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-3.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-3.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-3.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-3.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-3.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-3.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-3.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-3.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-3.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-3.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-3.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-3.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-3.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-3.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-3.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-3.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-3.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-3.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-3.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-3.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-3.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-4 .card-header {
+    height: 40px;
+  }
+  .section-dimension-4 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-4 .card-left {
+    width: 50px;
+  }
+  .section-dimension-4 .card-right {
+    width: 50px;
+  }
+  .section-dimension-4 {
+    min-height: 100px;
+  }
+  div.section-dimension-4.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-4.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-4.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-4.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-4.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-4.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-4.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-4.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-4.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-4.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-4.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-4.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-4.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-4.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-4.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-4.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-4.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-4.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-4.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-4.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-4.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-4.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-4.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-4.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-4.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-4.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-4.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-4.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-4.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-4.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-4.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-4.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-4.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-4.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-5 .card-header {
+    height: 40px;
+  }
+  .section-dimension-5 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-5 .card-left {
+    width: 50px;
+  }
+  .section-dimension-5 .card-right {
+    width: 50px;
+  }
+  .section-dimension-5 {
+    min-height: 100px;
+  }
+  div.section-dimension-5.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-5.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-5.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-5.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-5.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-5.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-5.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-5.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-5.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-5.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-5.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-5.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-5.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-5.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-5.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-5.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-5.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-5.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-5.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-5.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-5.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-5.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-5.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-5.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-5.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-5.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-5.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-5.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-5.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-5.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-5.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-5.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-5.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-5.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .grid-pad {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media all and (min-width: 0px) {
+  .row-height-1 > .col > .content-area {
+    min-height: 100px;
+  }
+}
+.sbs-container {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -o-flex;
+  display: flex;
+  flex-direction: row;
+}
+.leftContent,
+.rightContent {
+  display: inline;
+  width: 50%;
+}
+@media all {
+  .section-dimension-1 .card-header {
+    height: 40px;
+  }
+  .section-dimension-1 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-1 .card-left {
+    width: 50px;
+  }
+  .section-dimension-1 .card-right {
+    width: 50px;
+  }
+  .section-dimension-1 {
+    min-height: 100px;
+  }
+  div.section-dimension-1.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-1.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-1.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-1.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-1.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-1.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-1.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-1.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-1.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-1.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-1.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-1.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-1.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-1.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-1.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-1.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-1.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-1.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-1.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-1.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-1.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-1.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-1.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-1.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-1.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-1.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-1.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-1.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-1.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-1.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-1.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-1.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-1.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-1.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+.height {
+  height: 1000px;
+}
+.card_col > .widget {
+  display: inline-block;
+  column-break-inside: avoid;
+}
+@media all {
+  .card-columns-1 {
+    column-count: 5;
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-gap: 10px;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-fill: balance;
+    -webkit-column-fill: balance;
+    -moz-column-fill: balance;
+  }
+}
+.btnExit {
+  border: none;
+  width: 0px;
+  height: 0px;
+  background-color: transparent;
+}
+.btnExit:hover {
+  color: red;
+  background-color: transparent;
+}
+.left-receptacle {
+  float: left;
+}
+.right-receptacle {
+  float: right;
+}
+[data-uib="media/text"] p:first-of-type {
+  margin-top: 0px;
+}
+.ellipsis {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+@media all {
+  .flex-basis-17 > .widget {
+    flex-basis: calc(100% / 1);
+  }
+}
+@media all {
+  .section-dimension-18 .card-header {
+    height: 30px;
+  }
+  .section-dimension-18 .card-footer {
+    height: 0px;
+  }
+  .section-dimension-18 .card-left {
+    width: 0px;
+  }
+  .section-dimension-18 .card-right {
+    width: 0px;
+  }
+  .section-dimension-18 {
+    min-height: 0px;
+  }
+  div.section-dimension-18.header-on-left .card-left {
+    top: 30px;
+  }
+  div.section-dimension-18.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-18.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-18.left-on-header .card-header {
+    left: 0px;
+  }
+  div.section-dimension-18.header-on-right .card-right {
+    top: 30px;
+  }
+  div.section-dimension-18.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-18.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-18.right-on-header .card-header {
+    right: 0px;
+  }
+  div.section-dimension-18.footer-on-left .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-18.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-18.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-18.left-on-footer .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-18.footer-on-right .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-18.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-18.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-18.right-on-footer .card-footer {
+    right: 0px;
+  }
+  .section-dimension-18.cpad-1 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-8 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-9 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-4 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-5 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-12 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-13 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-2 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-3 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-10 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-11 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-6 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-7 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-14 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-15 {
+    padding: 30px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-18.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-18.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-19 .card-header {
+    height: 40px;
+  }
+  .section-dimension-19 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-19 .card-left {
+    width: 50px;
+  }
+  .section-dimension-19 .card-right {
+    width: 50px;
+  }
+  .section-dimension-19 {
+    min-height: 100px;
+  }
+  div.section-dimension-19.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-19.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-19.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-19.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-19.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-19.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-19.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-19.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-19.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-19.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-19.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-19.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-19.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-19.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-19.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-19.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-19.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-19.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-19.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-19.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-19.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-19.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-19.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-19.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-19.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-19.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-19.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-19.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-19.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-19.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-19.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-19.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-19.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-19.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-20 .card-header {
+    height: 40px;
+  }
+  .section-dimension-20 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-20 .card-left {
+    width: 50px;
+  }
+  .section-dimension-20 .card-right {
+    width: 50px;
+  }
+  .section-dimension-20 {
+    min-height: 100px;
+  }
+  div.section-dimension-20.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-20.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-20.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-20.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-20.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-20.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-20.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-20.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-20.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-20.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-20.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-20.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-20.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-20.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-20.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-20.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-20.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-20.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-20.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-20.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-20.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-20.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-20.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-20.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-20.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-20.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-20.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-20.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-20.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-20.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-20.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-20.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-20.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-20.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-21 .card-header {
+    height: 40px;
+  }
+  .section-dimension-21 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-21 .card-left {
+    width: 50px;
+  }
+  .section-dimension-21 .card-right {
+    width: 50px;
+  }
+  .section-dimension-21 {
+    min-height: 100px;
+  }
+  div.section-dimension-21.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-21.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-21.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-21.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-21.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-21.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-21.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-21.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-21.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-21.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-21.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-21.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-21.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-21.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-21.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-21.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-21.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-21.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-21.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-21.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-21.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-21.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-21.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-21.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-21.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-21.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-21.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-21.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-21.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-21.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-21.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-21.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-21.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-21.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+.figure-align {
+  display: table;
+  margin: 0px auto;
+}
+.figure-align img {
+  width: 100%;
+}
+.image-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+@media all {
+  .scale-image img {
+    width: 200px;
+  }
+}
+@media all {
+  .default-graphic-button {
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    background-color: #ffffff;
+  }
+}
+@media all {
+  .hover-graphic-button:hover {
+    border-radius: 5px;
+    background-color: #eeeeee;
+  }
+}
+@media all {
+  .active-graphic-button:active {
+    border-radius: 5px;
+    background-color: #dddddd;
+  }
+}
+@media all {
+  .default-graphic-text {
+    text-align: center;
+  }
+}
+@media all {
+  .default-graphic-sizing {
+    width: 150px !important;
+    -webkit-flex: 0 0 auto !important;
+    -moz-flex: 0 0 auto !important;
+    -ms-flex: 0 0 auto !important;
+    -o-flex: 0 0 auto !important;
+    flex: 0 0 auto !important;
+    padding: 5px;
+  }
+}
+@media all {
+  .default-image-sizing > img {
+    width: 50px;
+  }
+}
+@media all {
+  .flex-basis-24 > .widget {
+    flex-basis: calc(100% / 2);
+  }
+}
+@media all {
+  .section-dimension-25 .card-header {
+    height: 40px;
+  }
+  .section-dimension-25 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-25 .card-left {
+    width: 50px;
+  }
+  .section-dimension-25 .card-right {
+    width: 50px;
+  }
+  .section-dimension-25 {
+    min-height: 100px;
+  }
+  div.section-dimension-25.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-25.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-25.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-25.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-25.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-25.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-25.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-25.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-25.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-25.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-25.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-25.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-25.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-25.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-25.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-25.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-25.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-25.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-25.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-25.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-25.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-25.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-25.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-25.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-25.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-25.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-25.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-25.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-25.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-25.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-25.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-25.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-25.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-25.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-26 .card-header {
+    height: 40px;
+  }
+  .section-dimension-26 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-26 .card-left {
+    width: 50px;
+  }
+  .section-dimension-26 .card-right {
+    width: 50px;
+  }
+  .section-dimension-26 {
+    min-height: 100px;
+  }
+  div.section-dimension-26.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-26.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-26.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-26.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-26.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-26.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-26.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-26.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-26.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-26.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-26.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-26.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-26.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-26.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-26.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-26.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-26.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-26.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-26.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-26.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-26.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-26.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-26.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-26.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-26.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-26.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-26.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-26.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-26.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-26.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-26.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-26.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-26.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-26.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-27 .card-header {
+    height: 40px;
+  }
+  .section-dimension-27 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-27 .card-left {
+    width: 50px;
+  }
+  .section-dimension-27 .card-right {
+    width: 50px;
+  }
+  .section-dimension-27 {
+    min-height: 100px;
+  }
+  div.section-dimension-27.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-27.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-27.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-27.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-27.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-27.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-27.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-27.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-27.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-27.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-27.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-27.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-27.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-27.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-27.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-27.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-27.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-27.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-27.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-27.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-27.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-27.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-27.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-27.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-27.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-27.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-27.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-27.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-27.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-27.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-27.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-27.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-27.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-27.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+@media all {
+  .section-dimension-28 .card-header {
+    height: 40px;
+  }
+  .section-dimension-28 .card-footer {
+    height: 40px;
+  }
+  .section-dimension-28 .card-left {
+    width: 50px;
+  }
+  .section-dimension-28 .card-right {
+    width: 50px;
+  }
+  .section-dimension-28 {
+    min-height: 100px;
+  }
+  div.section-dimension-28.header-on-left .card-left {
+    top: 40px;
+  }
+  div.section-dimension-28.header-on-left .card-header {
+    left: 0px;
+  }
+  div.section-dimension-28.left-on-header .card-left {
+    top: 0px;
+  }
+  div.section-dimension-28.left-on-header .card-header {
+    left: 50px;
+  }
+  div.section-dimension-28.header-on-right .card-right {
+    top: 40px;
+  }
+  div.section-dimension-28.header-on-right .card-header {
+    right: 0px;
+  }
+  div.section-dimension-28.right-on-header .card-right {
+    top: 0px;
+  }
+  div.section-dimension-28.right-on-header .card-header {
+    right: 50px;
+  }
+  div.section-dimension-28.footer-on-left .card-left {
+    bottom: 40px;
+  }
+  div.section-dimension-28.footer-on-left .card-footer {
+    left: 0px;
+  }
+  div.section-dimension-28.left-on-footer .card-left {
+    bottom: 0px;
+  }
+  div.section-dimension-28.left-on-footer .card-footer {
+    left: 50px;
+  }
+  div.section-dimension-28.footer-on-right .card-right {
+    bottom: 40px;
+  }
+  div.section-dimension-28.footer-on-right .card-footer {
+    right: 0px;
+  }
+  div.section-dimension-28.right-on-footer .card-right {
+    bottom: 0px;
+  }
+  div.section-dimension-28.right-on-footer .card-footer {
+    right: 50px;
+  }
+  .section-dimension-28.cpad-1 {
+    padding: 40px 0px 0px 0px;
+  }
+  .section-dimension-28.cpad-1 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-8 {
+    padding: 0px 50px 0px 0px;
+  }
+  .section-dimension-28.cpad-8 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-9 {
+    padding: 40px 50px 0px 0px;
+  }
+  .section-dimension-28.cpad-9 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-4 {
+    padding: 0px 0px 40px 0px;
+  }
+  .section-dimension-28.cpad-4 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-5 {
+    padding: 40px 0px 40px 0px;
+  }
+  .section-dimension-28.cpad-5 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-12 {
+    padding: 0px 50px 40px 0px;
+  }
+  .section-dimension-28.cpad-12 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-13 {
+    padding: 40px 50px 40px 0px;
+  }
+  .section-dimension-28.cpad-13 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-2 {
+    padding: 0px 0px 0px 50px;
+  }
+  .section-dimension-28.cpad-2 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-3 {
+    padding: 40px 0px 0px 50px;
+  }
+  .section-dimension-28.cpad-3 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-10 {
+    padding: 0px 50px 0px 50px;
+  }
+  .section-dimension-28.cpad-10 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-11 {
+    padding: 40px 50px 0px 50px;
+  }
+  .section-dimension-28.cpad-11 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 0px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-6 {
+    padding: 0px 0px 40px 50px;
+  }
+  .section-dimension-28.cpad-6 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-7 {
+    padding: 40px 0px 40px 50px;
+  }
+  .section-dimension-28.cpad-7 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-14 {
+    padding: 0px 50px 40px 50px;
+  }
+  .section-dimension-28.cpad-14 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-15 {
+    padding: 40px 50px 40px 50px;
+  }
+  .section-dimension-28.cpad-15 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    bottom: 40px;
+    left: 50px;
+    height: auto !important;
+    width: auto !important;
+  }
+  .section-dimension-28.cpad-0 {
+    padding: 0px 0px 0px 0px;
+  }
+  .section-dimension-28.cpad-0 > .widget-divider:only-of-type {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    height: auto !important;
+    width: auto !important;
+  }
+}

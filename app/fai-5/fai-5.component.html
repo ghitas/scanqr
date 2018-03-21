@@ -1,0 +1,65 @@
+<!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+<!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+
+<div class="upage" id="FAI-5">
+    <div class="upage-outer">
+        <!--Header-->
+        <div class="uib-header header-bg container-group inner-element uib_w_31" data-uib="layout/header" data-ver="0">
+            <h2></h2>
+            <div class="widget-container wrapping-col single-centered">
+                <h4>Asset Infomation</h4>
+            </div>
+            <div class="widget-container content-area horiz-area wrapping-col left">
+                <button (click)="handleBack()" class="btnexit btn widget uib_w_32 d-margins" data-uib="twitter%20bootstrap/button" data-ver="1">
+                            <i class="fa fa-chevron-left fa-2x button-icon-left" data-position="left"></i>
+                        </button>
+            </div>
+            <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <!--End Header-->
+        <!--Body data-->
+        <div class="upage-content ac0 content-area vertical-col left" id="page_14_12">
+            <div class="list-group widget uib_w_59 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1" *ngIf="listView">
+                <a class="list-group-item allow-badge widget uib_w_60" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Asset No.:{{listView.ast_no}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_61" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Product Name (TW): {{listView.ast_nm_zh_tw}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_62" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Product Name (EN): {{listView.ast_nm_en}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_63" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Style: {{listView.style_no}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_64" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Brand: {{listView.brand_nm}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_65" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Filling Date: {{listView.pur_date_fact}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_66" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">State: </h5>
+                    <select [disabled]="this.appservice.typeAstTable == 'inv_ast'"  class="wide-control form-control default" [ngModel]="idleMkValue | json"
+                        (ngModelChange)="handleSelectState($event)">
+                                <option [value]="item | json" *ngFor="let item of stateList">{{appservice.locale == "zh" ?item.nm_zh_tw: item.nm_en}}</option>
+                            </select>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_67" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Custodian: {{listView.keeper_nm}}</h5>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_68" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Note</h5>
+                    <textarea [disabled]="this.appservice.typeAstTable == 'inv_ast'" rows="2" class="wide-control form-control" wrap="soft" [(ngModel)]="listView.memo">{{listView.memo}}</textarea>
+                </a>
+                <a class="list-group-item allow-badge widget uib_w_67" data-uib="twitter%20bootstrap/list_item" data-ver="1">
+                    <h5 class="list-group-item-heading">Old  Product number: {{listView.ast_no_bk}}</h5>
+                </a>
+            </div>
+
+        </div>
+        <!--End body data-->
+    </div>
+</div>
+<!-- Modal (Dialog) -->
+<fai-dialog></fai-dialog>

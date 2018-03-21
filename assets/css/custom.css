@@ -1,0 +1,132 @@
+a{
+    text-decoration: none;
+}
+.btn{
+    outline: none !important;
+}
+.row{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/*Header*/
+.single-centered{
+    color:white;
+}
+.clear{
+    clear: both;
+}
+.header-bg{
+    background: #1E2380 !important;
+    height: 30px;
+    line-height: 30px;
+}
+.title{
+    font-size: 16px;
+}
+/*End Header*/
+
+.upage{
+    overflow-y: hidden;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: white;
+}
+/*FAI1 CSS*/
+#mainpage .tab-content{
+    margin-top: 11em;
+}
+#mainpage img{
+    width:30px;
+    height:30px;
+}
+#download_btn,#upload_btn,#delete_btn{
+    text-decoration: none;
+    color: #383838;
+    padding-top:10px;
+}
+#download_btn img,#upload_btn img,#delete_btn img{
+    width:30px;
+    height:30px;
+}
+#home{
+    margin-top: 175px;
+    overflow-y: scroll;
+}
+.fai4-tab{
+    overflow-y: auto;
+}
+#FAI-4 .tab-content{
+    margin-top: 9em;
+}
+#FAI-3{
+    padding-top: 50px;
+    overflow: auto;
+}
+#FAI-3 .upage-outer .uib-header{
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+#FAI-3 .btn-submit{
+    background-color: #1E2380;
+    border-color:#1E2380;
+    color: white;
+}
+.badge{
+    background-color: transparent;
+    color:black;
+}
+.list-group-item{
+    line-height: 2.5em;
+}
+.btnexit {
+  border: none;
+  outline: none !important;
+  color:white;
+  background-color: transparent;
+  position: relative;
+    -webkit-animation: mymove 2s 1;  /* Chrome, Safari, Opera */
+    animation: mymove 2s 2;
+}
+.btnexit:hover {
+  color: coral;
+  background-color: transparent;
+}
+.btnexit:focus{
+    color: #fff;
+    text-decoration: none;
+}
+/*END FAI1*/
+
+/*FAI-5*/
+#FAI-5 .upage-outer .upage-content{
+    overflow-y: auto;
+}
+.record{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.box-sm{
+    margin: 0 auto;
+    text-align: center;
+    
+    border-radius: 4px;
+    border: solid 1px;
+    
+}
+.box-md{
+    text-align:center;
+    margin:0 auto;
+}
+.pd-l-0{
+    padding-left: 0;    
+}
+.pd-r-0{
+    padding-right: 0;
+}
+.pct-bottom button{
+    background-color: white;
+}

@@ -1,0 +1,54 @@
+<div #selector class="upage" id="mainpage">
+    <div class="upage-outer">
+        <div class="upage-content ac0 content-area vertical-col left" id="page_78_45">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <!-- Top header-->
+                <div class="uib-header header-bg container-group inner-element uib_w_7" data-uib="layout/header" data-ver="0">
+                    <h2></h2>
+                    <div class="widget-container wrapping-col single-centered"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col left"></div>
+                    <div class="widget-container content-area horiz-area wrapping-col right">
+                        <button class="btn btnexit" (click)="btnClose()"><i class="fa fa-power-off fa-2x" data-position="icon only"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- End top header-->
+                <!-- Button header -->
+                <div class="uib-button-bar default-button-bar-height widget uib_w_3 d-margins" data-uib="media/button_bar" data-ver="0">
+                    <a class="col-xs-4 btn btn-default" (click)="btnDownload()">
+                        <img src="./assets/images/download_64.png"><br>
+                        <span class="uib-caption">Download</span>
+                    </a>
+                    <a class="col-xs-4 btn btn-default" (click)="btnUpload()">
+                        <img class="clear" src="./assets/images/upload_64.png"><br>
+                        <span class="uib-caption">Upload</span>
+                    </a>
+                    <a class="col-xs-4 btn btn-default" (click)="btnDelete()">
+                        <img class="clear" src="./assets/images/paper-bin_64.png"><br>
+                        <span class="uib-caption">Delete</span>
+                    </a>
+                </div>
+                <!--End button header -->
+                <h4 class="col-xs-12">&nbsp;Inventory sheet list</h4>
+                <h4 class="col-xs-12">{{inv_couting}}</h4>
+            </nav>
+            <!--Inventory sheet list-->
+            <div id="home" class="tab-pane fade in active">
+                <div class="list-group widget uib_w_7 d-margins" data-uib="twitter%20bootstrap/list_group" data-ver="1" *ngIf="listView">
+                    <a routerLink="/fai2" (click)="setDataFal2(list.plan_id)" class="list-group-item allow-badge widget uib_w_9" data-uib="twitter%20bootstrap/list_item" data-ver="1" *ngFor="let list of listView">
+                        <span class="badge">{{list.todo}}/{{list.checked}}/{{list.extras}}</span>
+                        <h4 class="list-group-item-heading" *ngIf="list">{{list.plan_nm}} {{list.plan_no}}</h4>
+                    </a> 
+                </div>
+            </div>
+            <!--End inventory sheet list-->
+            <div class="card_grid widget uib_w_24 wrapping-col d-margins" data-uib="layout/card_grid" data-ver="0">
+                <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_25" data-uib="layout/card" data-ver="0"></div>
+                <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_26" data-uib="layout/card" data-ver="0"></div>
+                <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_27" data-uib="layout/card" data-ver="0"></div>
+                <div class="widget widget-container content-area vertical-col uib-card cpad-0 uib_w_28" data-uib="layout/card" data-ver="0"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal (Dialog) -->

@@ -1,0 +1,94 @@
+<!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+<!-- Place your remote debugging weinre script URL here, if it does not work above. -->
+<div class="upage" id="FAI-3">
+    <div class="upage-outer">
+        <!--Header-->
+        <div class="uib-header header-bg container-group inner-element uib_w_29" data-uib="layout/header" data-ver="0">
+            <div class="widget-container wrapping-col single-centered">
+                <h4>Inventory Check</h4>
+            </div>
+            <div class="widget-container content-area horiz-area wrapping-col left">
+                <button (click)="handleBackBtn()" class="btnexit btn widget uib_w_30 d-margins" data-uib="twitter%20bootstrap/button" data-ver="1">
+                            <i class="fa fa-chevron-left fa-2x button-icon-left" data-position="left"></i>
+                        </button>
+            </div>
+            <div class="widget-container content-area horiz-area wrapping-col right"></div>
+        </div>
+        <!--End Header-->
+        <div class="upage-content ac0 content-area vertical-col left">
+            <h4 class="col-xs-12">Location:<span style="font-size:15px;"> {{appservice.selectedLoc.location_nm_zh_TW}} {{appservice.selectedLoc.location_nm_en}}</span></h4>
+            <!--QR code box-->
+
+            <!--End QR code box-->
+            <!--Asset number input-->
+            <div class="col-xs-12 record">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Asset No." [(ngModel)]="assetsNo">
+                    <span class="input-group-btn">
+                                <button class="btn btn-default btn-primary btn-submit" type="button" (click)="handleInputAst()">Send</button>
+                            </span>
+                </div>
+                <!-- /input-group -->
+            </div>
+            <!--End Asset number input-->
+            <div class="col-xs-12 record">
+                <textarea class="form-control" rows="3" disabled style="text-align:left !important; padding-left: 2px">
+Product number: {{assetsNoTxt}}
+Product name: {{assetsNmTxt}}
+Old  Product number: {{oldAssetsNoTxt}}
+                </textarea>
+            </div>
+            <!--Control button  -->
+            <div style="padding-bottom:10px;">
+                <div class="btn-group uib-bs-flex widget uib_w_32 d-margins col-xs-12" data-uib="twitter%20bootstrap/button_group" data-ver="1">
+                    <button class="btn widget uib_w_33 btn-default col-xs-4" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-list-alt button-icon-top" data-position="top"></i>To Do ({{tabObj.todo}})</button>
+                    <button class="btn widget uib_w_34 btn-default col-xs-4" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-check button-icon-top" data-position="top"></i>Checked ({{tabObj.checked}})</button>
+                    <button class="btn widget uib_w_35 btn-default col-xs-4" data-uib="twitter%20bootstrap/button" data-ver="1"><i class="glyphicon glyphicon-share-alt button-icon-top" data-position="top"></i>Extras ({{tabObj.extras}})</button>
+                </div>
+            </div>
+            <!--End control button  -->
+        </div>
+    </div>
+</div>
+<!-- Confirm dialog -->
+<!--<button class="btn btn-default btn-primary btn-submit" id="btnCtrlModal" style="display:none;" type="button" data-toggle="modal" data-target="#modalSend"></button>
+<div class="modal fade" id="modalSend" role="dialog" style="z-index: 999999;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">System Information</h4>
+            </div>
+            <div class="modal-body">
+                <p>This fixed-asset gain?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="confirmYesExtras()">Yes</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="confirmNoExtras()">No</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- end Confirm dialog -->
+<!-- Company name list dialog -->
+<button class="btn btn-default btn-primary btn-submit" id="btnCtrlComp" style="display:none;" type="button" data-toggle="modal"
+    data-target="#modalComp"></button>
+<div class="modal fade" id="modalComp" role="dialog" style="z-index: 999999;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Assets No is duplicate, please choose a Company name</h4>
+            </div>
+            <div class="modal-body">
+                <a class="list-group-item allow-badge widget uib_w_9" *ngFor="let item of listCompany" data-dismiss="modal" (click)="handleChooseComp(item)">{{item.comp_nm}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Company name list dialog -->
+
+<!--Sound beep double -->
+<audio id="beep2" src="./assets/sound/beep_1_short_double.mp3" autostart="false"></audio>
+<!-- Sound beep -->
+<audio id="beep1" src="./assets/sound/beep_1_short.mp3" autostart="false"></audio>
